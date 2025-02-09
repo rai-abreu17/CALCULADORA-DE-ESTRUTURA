@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Estrutural Dinâmica</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+  <h1>Calculadora Estrutural Dinâmica</h1>
+  
+  <!-- Entrada Global -->
+  <div class="input-group">
+    <label for="globalLoad">Carga Aplicada (N):</label>
+    <input type="number" id="globalLoad" placeholder="Ex.: 250">
+  </div>
+  <div class="input-group">
+    <label for="globalAngleOrientation">Referência dos ângulos:</label>
+    <select id="globalAngleOrientation">
+      <option value="horizontal">Horizontal</option>
+      <option value="vertical">Vertical</option>
+    </select>
+  </div>
+  
+  <h2>Hastes</h2>
+  <table id="rodsTable">
+    <thead>
+      <tr>
+        <th>Identificador</th>
+        <th>Diâmetro (mm)</th>
+        <th>Ângulo (graus)<br><small>(Opcional)</small></th>
+        <th>Usar Equilíbrio?</th>
+        <th>Força Manual (N)<br><small>(Opcional)</small></th>
+        <th>Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- As linhas serão adicionadas dinamicamente aqui -->
+    </tbody>
+  </table>
+  <button onclick="addRodRow()">Adicionar Haste</button>
+  <br><br>
+  <button onclick="solveCalculator()">Calcular</button>
+  
+  <h2>Resultados</h2>
+  <div id="results"></div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
